@@ -153,13 +153,13 @@
 
 
   <servlet>
-     <servlet-name>updateOwner</servlet-name>
-     <servlet-class>updateOwner</servlet-class>
+     <servlet-name>updateHome</servlet-name>
+     <servlet-class>updateHome</servlet-class>
   </servlet>
 
   <servlet-mapping>
-     <servlet-name>updateOwner</servlet-name>
-     <url-pattern>/updateOwner</url-pattern>
+     <servlet-name>updateHome</servlet-name>
+     <url-pattern>/updateHome</url-pattern>
   </servlet-mapping>
 
   <servlet>
