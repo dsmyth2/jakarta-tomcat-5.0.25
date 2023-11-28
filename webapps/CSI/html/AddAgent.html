@@ -1,83 +1,84 @@
-	<!-- AddAgent.html -->
-	<html>
-	  <head>
-	    <title>Adding an Agent</title>
-	  </head>
-	  <body bgcolor="blue">
-	    &nbsp;<p align="center"><font color="#000000""><b>
-        <font face="Arial" size="4">&nbsp;</font><font face="Bernard MT Condensed" size="5">Add A New Agent
-         </font></b></font></p>
-		<center> 
-		
-		Please enter Person Id and license number
+<!-- AddAgent.html -->
+<html>
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <title>Add an Agent</title>
+  </head>
+  <body class="bg-body-secondary">
+    <h1 class="text-center my-3">Add a New Agent</h1>
+    <h3 class="text-center mb-5">Please Enter Person ID and License Number</h3>
 
-	    <form method = "post" action = "/CSI/AddAgent">
-		<p> 
-		
-		<table>
-		  <tr>
-		     <td>
-		         <font color="red">Person Id <font color = "red">*</font>
-			 </td>
-			 <td>
-	            <input type = "text" name = "PERSONID">&nbsp; (The Id entered must be in the Person data table)
-			 </td>
-		   </tr>
-		   <tr>
-		      <td>
-			      <font color="#FF0000">License Number</font><font color="red">*</font>
-			  </td>
-			  <td>
-                  <font color="#FF0000"><span style="background-color: #000000">
-	              <input type = "text" name = "LICENSENUM" size="25"></span></font>&nbsp; (Can be any number of digits)
-			   </td>
-		   </tr>
-		 </table>
-	    <br><br>
-		  <table>
-		     <tr>
-			    <td>
-			        <input type = "submit" name = "Submit" value = "Submit">
-				</td>
-				<td>
-	               <input type = "reset" value = "Reset">
-				</td>
-			</tr>
-		  </table>
-	      </p>
-	    </form>
-	    <p><font color = "#FF0000">Note: * required fields</font></p>
-		
-		</center>
-		
-	<OBJECT classid=CLSID:D45FD31B-5C6E-11D1-9EC1-00C04FD7081F id=ricci width="32"
-
-height="32"></OBJECT>
-<SCRIPT>
-
-var MerlinID;
-var MerlinACS;
-ricci.Connected = true;
-MerlinLoaded = LoadLocalAgent(MerlinID, MerlinACS);
-Merlin = ricci.Characters.Character(MerlinID);
-Merlin.Show();
-Merlin.Play("congratulate");
-Merlin.Speak("Hello everyone, ....Let's welcome a new agent.  ..");
-Merlin.Play("domagic1");
-//Merlin.Speak("Greating Doctor Azar, I am glad to see you at..house dot com.  ");
-Merlin.Hide();
-function LoadLocalAgent(CharID, CharACS) {
-LoadReq = ricci.Characters.Load(CharID, CharACS);
-return(true);
-}
-// BY STAR28.com
-</SCRIPT>
-  	
-		
-		
-		
-		
-		
-		
-	  </body>
+    <form method="post" action="/CSI/AddAgent">
+      <div id="table-wrapper" class="d-flex justify-content-center">
+        <table class="table-borderless">
+          <tr>
+            <td class="p-2">
+              <label class="form-label" for="PERSONID">Person ID</label>
+            </td>
+            <td class="p-2">
+              <input class="form-control" type="text" name="PERSONID" />
+            </td>
+            <td id="p-2">
+              (The Id entered must be in the Person data table)
+            </td>
+          </tr>
+          <tr>
+            <td class="p-2">
+              <label for="LICENSENUM" class="form-label">License Number*</label>
+            </td>
+            <td class="p-2">
+              <input
+                class="form-control"
+                type="text"
+                name="LICENSENUM"
+                size="25"
+              />
+              <td class="p-2">
+                (Can be any number of digits)
+              </td>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="button-group" class="text-center">
+        <input
+          class="btn btn-primary mx-2"
+          type="submit"
+          name="Submit"
+          value="Submit"
+        />
+        <input class="btn btn-danger mx-2" type="reset" value="Reset" />
+      </div>
+    </form>
+    <p class="m-3 text-danger">* indicates required fields</p>
+    <object
+      classid="CLSID:D45FD31B-5C6E-11D1-9EC1-00C04FD7081F"
+      id="ricci"
+      width="32"
+      height="32"
+    ></object>
+    <script>
+      var MerlinID;
+      var MerlinACS;
+      ricci.Connected = true;
+      MerlinLoaded = LoadLocalAgent(MerlinID, MerlinACS);
+      Merlin = ricci.Characters.Character(MerlinID);
+      Merlin.Show();
+      Merlin.Play("congratulate");
+      Merlin.Speak("Hello everyone, ....Let's welcome a new agent.  ..");
+      Merlin.Play("domagic1");
+      //Merlin.Speak("Greating Doctor Azar, I am glad to see you at..house dot com.  ");
+      Merlin.Hide();
+      function LoadLocalAgent(CharID, CharACS) {
+        LoadReq = ricci.Characters.Load(CharID, CharACS);
+        return true;
+      }
+      // BY STAR28.com
+    </script>
+  </body>
 </html>

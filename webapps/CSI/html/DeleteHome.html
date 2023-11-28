@@ -1,57 +1,70 @@
-		<!-- DeleteHome.html -->
-	<html>
-	  <head>
-	    <title>Delete Home</title>
-	  </head>
-	  <body bgcolor="WHITE">
-          &nbsp;<p align="center"><font color="#000000"><b>
-          <font face="Arial" size="4">&nbsp;
-		  </font><font face="Bernard MT Condensed" size="5">Home Deletion</font></b></font></p>
-		
-		<center> Please enter HOME ID</center>
+<!-- DeleteHome.html -->
+<html>
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
 
-	    <form method = "post" action = "/CSI/DeleteHome">
-	      <p>&nbsp;&nbsp;&nbsp;&nbsp; </p>
-            <center>
-            Home ID<font color = "#FF0000"></font>
-	        <input type = "text" name = "HomeID">&nbsp;
-	        </p>
-	         
-			<p><input type = "submit" name = "Submit" value = "Submit">
-	        <input type = "reset" value = "Reset">
-	        </p>
-	    </form>
-            <p>
-	        <p><font color = "#800000"> </font></p>
-            </p>
-          </center>
-		  
-		  <OBJECT classid=CLSID:D45FD31B-5C6E-11D1-9EC1-00C04FD7081F id=ricci width="32"
+    <title>Delete Home</title>
+  </head>
 
-height="32"></OBJECT>
-<SCRIPT>
+  <body class="bg-body-secondary">
+    <h1 class="text-center my-3">Home Deletion</h1>
 
-var MerlinID;
-var MerlinACS;
-ricci.Connected = true;
-MerlinLoaded = LoadLocalAgent(MerlinID, MerlinACS);
-Merlin = ricci.Characters.Character(MerlinID);
-Merlin.Show();
-Merlin.Play("congratulate");
-Merlin.Speak("Too bad,.... They decided not to sell,... lets take it off the list.  ..");
-Merlin.Play("domagic1");
-//Merlin.Speak("Greating Doctor Azar, I am glad to see you at..house dot com.  ");
-Merlin.Hide();
-function LoadLocalAgent(CharID, CharACS) {
-LoadReq = ricci.Characters.Load(CharID, CharACS);
-return(true);
-}
-// BY STAR28.com
-</SCRIPT>
-		  
-		  
-		  
-		  
-		  
-	  </body>
+    <h3 class="text-center mb-3">Please enter Home ID to Delete</h3>
+
+    <form method="post" action="/CSI/DeleteHome">
+      <div id="table-wrapper" class="d-flex justify-content-center">
+        <table class="table-borderless">
+          <tr>
+            <td class="p-2">
+              <label class="form-label" for="HomeID">Home ID</label>
+            </td>
+            <td class="p-2">
+              <input class="form-control" type="text" name="HomeID" />
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="button-group" class="text-center">
+        <input
+          class="btn btn-primary mx-2"
+          type="submit"
+          name="Submit"
+          value="Submit"
+        />
+        <input class="btn btn-danger mx-2" type="reset" value="Reset" />
+      </div>
+    </form>
+
+    <object
+      classid="CLSID:D45FD31B-5C6E-11D1-9EC1-00C04FD7081F"
+      id="ricci"
+      width="32"
+      height="32"
+    ></object>
+    <script>
+      var MerlinID;
+      var MerlinACS;
+      ricci.Connected = true;
+      MerlinLoaded = LoadLocalAgent(MerlinID, MerlinACS);
+      Merlin = ricci.Characters.Character(MerlinID);
+      Merlin.Show();
+      Merlin.Play("congratulate");
+      Merlin.Speak(
+        "Too bad,.... They decided not to sell,... lets take it off the list.  .."
+      );
+      Merlin.Play("domagic1");
+      //Merlin.Speak("Greating Doctor Azar, I am glad to see you at..house dot com.  ");
+      Merlin.Hide();
+      function LoadLocalAgent(CharID, CharACS) {
+        LoadReq = ricci.Characters.Load(CharID, CharACS);
+        return true;
+      }
+      // BY STAR28.com
+    </script>
+  </body>
 </html>
