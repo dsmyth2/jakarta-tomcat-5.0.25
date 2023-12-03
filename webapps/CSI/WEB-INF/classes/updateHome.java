@@ -20,7 +20,7 @@ public class updateHome extends HttpServlet
 		try
 		{			
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver()); 
-            con = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:orcl", "CSIPROJECT", "Mohammed1");
+            con = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:orcl", "CSIPROJECT", "mohammed");
 	       	System.out.println("Congratulations! You are connected successfully.");      		
      	}
         catch(SQLException e)
@@ -51,7 +51,7 @@ public class updateHome extends HttpServlet
   			e.printStackTrace();
 		}
 		
-		query = "update homes set HOMEID = '"+HOMEID+"' where ADDRESS  = '"+ADDRESS+"'";												
+		query = "update homes set Adress = '"+ADDRESS+"' where HomeID  = '"+HOMEID+"'";												
 		out.println("<html><head><title>  Record has been updated</title>");	 
 		out.println("</head><body>");
 		out.print( "<br /><b><center><font color=\"RED\"><H2>The following record has been updated in the database:</H2></font>");		
