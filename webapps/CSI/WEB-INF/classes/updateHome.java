@@ -51,7 +51,7 @@ public class updateHome extends HttpServlet
   			e.printStackTrace();
 		}
 		
-		query = "update homes set Adress = '"+ADDRESS+"' where HomeID  = '"+HOMEID+"'";												
+		query = "update homes set Address = '"+ADDRESS+"' where HomeID  = '"+HOMEID+"'";												
 		out.println("<html><head><title>  Record has been updated</title>");	 
 		out.println("</head><body>");
 		out.print( "<br /><b><center><font color=\"RED\"><H2>The following record has been updated in the database:</H2></font>");		
